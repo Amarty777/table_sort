@@ -1,0 +1,67 @@
+<div class="pagination-wrapper" [ngSwitch]="type">
+  <ng-container *ngSwitchCase="0">
+    <div class="paginator-arrow" (click)="changePage(page - 1)" *ngIf="page > 1"><<</div>
+    <div class="paginator-arrow" (click)="changePage(page + 1)" *ngIf="pageCount != page">>></div>
+  </ng-container>
+  <ng-container *ngSwitchCase="1">
+    <div class="paginator-arrow" (click)="changePage(page - 1)" *ngIf="page > 1"><<</div>
+    <div class="paginator-item" (click)="changePage(1)" [ngClass]="{'active': page === 1 }"><p class="paginator-page">1</p></div>
+    <div class="paginator-item" (click)="changePage(2)" [ngClass]="{'active': page === 2 }"><p class="paginator-page">2</p></div>
+    <div class="paginator-item" (click)="changePage(3)"><p class="paginator-page">3</p></div>
+    <div class="paginator-dots"><p class="paginator-page">...</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount)"><p class="paginator-page">{{ pageCount }}</p></div>
+    <div class="paginator-arrow" (click)="changePage(page + 1)" *ngIf="pageCount != page">>></div>
+  </ng-container>
+  <ng-container *ngSwitchCase="2">
+    <div class="paginator-arrow" (click)="changePage(page - 1)"><<</div>
+    <div class="paginator-item" (click)="changePage(1)"><p class="paginator-page">1</p></div>
+    <div class="paginator-item" (click)="changePage(2)"><p class="paginator-page">2</p></div>
+    <div class="paginator-item" (click)="changePage(3)" [ngClass]="{'active': page === 3 }"><p class="paginator-page">3</p></div>
+    <div class="paginator-item" (click)="changePage(4)" [ngClass]="{'active': page === 4 }"><p class="paginator-page">4</p></div>
+    <div class="paginator-item" (click)="changePage(5)" [ngClass]="{'active': page === 5 }"><p class="paginator-page">5</p></div>
+    <div class="paginator-item" (click)="changePage(6)" *ngIf="page >= 4"><p class="paginator-page">6</p></div>
+    <div class="paginator-item" (click)="changePage(7)" *ngIf="page >= 5"><p class="paginator-page">7</p></div>
+    <div class="paginator-dots"><p class="paginator-page">...</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount)"><p class="paginator-page">{{ pageCount }}</p></div>
+    <div class="paginator-arrow" (click)="changePage(page + 1)">>></div>
+  </ng-container>
+  <ng-container *ngSwitchCase="3">
+    <div class="paginator-arrow" (click)="changePage(page - 1)"><<</div>
+    <div class="paginator-item" (click)="changePage(1)"><p class="paginator-page">1</p></div>
+    <div class="paginator-dots"><p class="paginator-page">...</p></div>
+    <div class="paginator-item" (click)="changePage(page - 2)"><p class="paginator-page">{{ page - 2 }}</p></div>
+    <div class="paginator-item" (click)="changePage(page - 1)"><p class="paginator-page">{{ page - 1 }}</p></div>
+    <div class="paginator-item active"><p class="paginator-page">{{ page }}</p></div>
+    <div class="paginator-item" (click)="changePage(page + 1)"><p class="paginator-page">{{ page + 1 }}</p></div>
+    <div class="paginator-item" (click)="changePage(page + 2)"><p class="paginator-page">{{ page + 2 }}</p></div>
+    <div class="paginator-dots"><p class="paginator-page">...</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount)"><p class="paginator-page">{{ pageCount }}</p></div>
+    <div class="paginator-arrow" (click)="changePage(page + 1)">>></div>
+  </ng-container>
+  <ng-container *ngSwitchCase="4">
+    <div class="paginator-arrow" (click)="changePage(page - 1)"><<</div>
+    <div class="paginator-item" (click)="changePage(1)"><p class="paginator-page">1</p></div>
+    <div class="paginator-dots"><p class="paginator-page">...</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount - 6)" *ngIf="page >= pageCount - 4"><p class="paginator-page">{{ pageCount - 6 }}</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount - 5)" *ngIf="page >= pageCount - 4"><p class="paginator-page">{{ pageCount - 5 }}</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount - 4)" [ngClass]="{'active': page === pageCount - 4 }"><p class="paginator-page">{{ pageCount - 4 }}</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount - 3)" [ngClass]="{'active': page === pageCount - 3 }"><p class="paginator-page">{{ pageCount - 3 }}</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount - 2)"><p class="paginator-page">{{ pageCount - 2 }}</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount - 1)"><p class="paginator-page">{{ pageCount - 1 }}</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount)"><p class="paginator-page">{{ pageCount }}</p></div>
+    <div class="paginator-arrow" (click)="changePage(page + 1)">>></div>
+  </ng-container>
+  <ng-container *ngSwitchCase="5">
+    <div class="paginator-arrow" (click)="changePage(page - 1)"><<</div>
+    <div class="paginator-item" (click)="changePage(1)"><p class="paginator-page">1</p></div>
+    <div class="paginator-dots"><p class="paginator-page">...</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount - 4)" *ngIf="page >= pageCount - 2"><p class="paginator-page">{{ pageCount - 4 }}</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount - 3)" *ngIf="page >= pageCount - 2"><p class="paginator-page">{{ pageCount - 3 }}</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount - 2)" [ngClass]="{'active': page === pageCount - 2 }"><p class="paginator-page">{{ pageCount - 2 }}</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount - 1)" [ngClass]="{'active': page === pageCount - 1 }"><p class="paginator-page">{{ pageCount - 1 }}</p></div>
+    <div class="paginator-item" (click)="changePage(pageCount)" [ngClass]="{'active': page === pageCount }"><p class="paginator-page">{{ pageCount }}</p></div>
+    <div class="paginator-arrow" (click)="changePage(page + 1)" *ngIf="page != pageCount">>></div>
+  </ng-container>
+  <ng-container *ngSwitchCase="6">
+  </ng-container>
+</div>

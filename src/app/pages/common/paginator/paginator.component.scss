@@ -1,0 +1,35 @@
+.paginator-item {
+  display: inline-block;
+  font-size: 16px;
+  padding: 14px 20px;
+  cursor: pointer;
+  margin: 0 6px;
+  border-radius: 5px;
+  transition: 0.2s all;
+}
+.paginator-item.active {
+  border: 1px solid #4CAF50;
+  color: #4CAF50;
+}
+.paginator-item:hover {
+  color: #fff;
+  background-color: #4CAF50;
+}
+.paginator-arrow,
+.paginator-dots {
+  display: inline-block;
+  padding: 14px 20px;
+  cursor: pointer;
+  margin: 0 6px;
+}
+.paginator-arrow {
+  cursor: pointer;
+}
+.paginator-dots {
+  cursor: default;
+}
+.pagination-wrapper {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 16px 0px;
+}

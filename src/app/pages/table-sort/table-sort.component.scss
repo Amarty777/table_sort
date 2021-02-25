@@ -1,0 +1,124 @@
+.sort-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sort-table td, .sort-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.sort-table th {
+  position: relative;
+  cursor: pointer;
+}
+
+.sort-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.sort-table tr:hover {background-color: #ddd;}
+
+.sort-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.table-sort-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 200px;
+  max-width: 800px;
+}
+
+.paginator-wrapper {
+  margin: 20px 0px 20px 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+
+.paginator-wrapper select {
+  margin: 0px 10px 0px 10px;
+  height: 30px;
+}
+.paginator-count-info {
+  display: inline-block;
+  width: 120px;
+}
+.paginator-page-info {
+  display: inline-block;
+  min-width: 90px;
+}
+.paginator-btn-wrapper {
+  display: inline-block;
+  width: 100px;
+}
+.paginator-btn {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.paginator-btn.disabled {
+  opacity: 0.75;
+  cursor: no-drop !important;
+}
+
+span.order-by {
+  position: absolute;
+  right: 5px;
+  transition: all 0.3s;
+  transform: rotate(-90deg);
+}
+
+span.order-by.desc {
+  transform: rotate(90deg);
+}
+th.ID {
+  width: 50px;
+}
+th.Distance {
+  width: 170px;
+}
+th.Speed {
+  width: 100px;
+}
+th.Result {
+  width: 80px;
+}
+th.Birthdate {
+  width: 85px;
+}
+th.Name {
+  width: 300px;
+}
+
+.t-align-left {
+  text-align: left;
+}
+
+.t-align-center {
+  text-align: center;
+}
+
+.t-align-right {
+  text-align: right;
+}
+
+.btn-wrapper button {
+  margin-left: 10px;
+  width: 100px;
+  height: 40px;
+}
+
+.btn-wrapper {
+  text-align: right;
+}
+
+.btn-wrapper input {
+  height: 40px;
+}

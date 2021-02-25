@@ -1,0 +1,57 @@
+<div class="table-sort-wrapper" *ngIf="!!table">
+
+  <div class="paginator-wrapper">
+    <div class="paginator-count-info">Items per page:</div>
+    <select name="paginator_take" (change)="takeChanged($event)">
+      <option value="5">5</option>
+      <option selected value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+    <div class="paginator-page-info">{{ paginatorTitle }}</div>
+    <div class="paginator-btn-wrapper">
+      <div class="paginator-btn" [ngClass]="{'disabled': table.paginator.page < 2}"
+      (click)="goto(this.table.paginator.page - 1)"><<</div>
+      <div class="paginator-btn" [ngClass]="{'disabled': table.paginator.totalCount === lastOnPage}"
+      (click)="goto(this.table.paginator.page + 1)">>></div>
+    </div>
+  </div>
+
+
+  <table class="sort-table">
+    <thead>
+      <th *ngFor="let headerItem of thead; let i=index"
+      (click)="orderBy(headerItem)" [class]="headerItem">
+        {{ headerItem }}
+        <span class="order-by" *ngIf="column === headerItem"
+        [ngClass]="{'desc': isDesc && column === headerItem}">></span>
+      </th>
+    </thead>
+    <tbody *ngIf="!!table">
+      <tr *ngFor="let item of table.displayed; let i=index">
+        <td>{{ item.id }}</td>
+        <td>{{ item.firstName }} {{  item.lastName }}</td>
+        <td *ngIf="item.isFinished">FULL</td>
+        <td *ngIf="!item.isFinished">{{ item.distance | distancePipe: false }} of {{ 42195 | distancePipe }}</td>
+        <td class="t-align-center">{{ item.speed | speedPipe }}</td>
+        <td class="t-align-center">{{ item.result | timeDurationPipe }}</td>
+        <td class="t-align-center">{{ item.birthDate | date: 'dd.MM.yyyy' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="btn-wrapper">
+    <input type="number" [(ngModel)]="count" name="count">
+    <button type="button" (click)="generaTable()">Get it!</button>
+  </div>
+
+  <app-paginator
+    *ngIf="!!table.paginator"
+    [page]="table.paginator.page"
+    [total]="table.paginator.totalCount"
+    [take]="table.paginator.take"
+    (pageChange)="pageChanged($event)"></app-paginator>
+</div>
+
+
